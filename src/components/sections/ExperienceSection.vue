@@ -1,27 +1,28 @@
 <template>
   <section-item title="experience">
-    <div v-for="(item, index) in data" v-bind:key="index">
-      <a v-if="item.website" v-bind:href="item.website">{{ item.company }}</a>
-      <div v-else>{{ item.company }}</div>
-      <div>{{ item.location }}</div>
-      <div>{{ item.position }}</div>
-      <div>{{ item.dates }}</div>
-      <div v-if="item.description">{{ item.description }}</div>
-      <ul v-if="item.responsibilities">
-        <li v-for="(responsibility, rIndex) in item.responsibilities" v-bind:key="rIndex">
-          {{ responsibility }}
-        </li>
-      </ul>
-    </div>
+    <primary-item
+      v-for="(item, index) in data"
+      v-bind:key="index"
+      v-bind:title="item.position"
+      v-bind:company="item.company"
+      v-bind:dates="item.dates"
+      v-bind:place="item.location"
+      v-bind:description="item.description"
+      listTitle="Responsibilities"
+      v-bind:listItems="item.responsibilities"
+      v-bind:keywords="item.keywords"
+    />
   </section-item>
 </template>
 <script>
 import SectionItem from '../SectionItem'
+import PrimaryItem from '../PrimaryItem'
 
 export default {
   name: 'ExperienceSection',
   components: {
     SectionItem,
+    PrimaryItem,
   },
   props: {
     data: {

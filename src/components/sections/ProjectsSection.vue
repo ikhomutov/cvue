@@ -1,25 +1,25 @@
 <template>
   <section-item title="projects">
-    <div v-for="(item, index) in data" v-bind:key="index">
-      <a v-if="item.link" v-bind:href="item.link">{{ item.name }}</a>
-      <div v-else>{{ item.name }}</div>
-      <div v-if="item.dates">{{ item.dates }}</div>
-      <div v-if="item.description">{{ item.description }}</div>
-      <ul v-if="item.achievements">
-        <li v-for="(achievement, aIndex) in item.achievements" v-bind:key="aIndex">
-          {{ achievement }}
-        </li>
-      </ul>
-    </div>
+    <secondary-item
+      v-for="(item, index) in data"
+      v-bind:key="index"
+      v-bind:title="item.name"
+      v-bind:link="item.link"
+      v-bind:dates="item.dates"
+      v-bind:description="item.description"
+      v-bind:listItems="item.achievements"
+    />
   </section-item>
 </template>
 <script>
 import SectionItem from '../SectionItem'
+import SecondaryItem from '../SecondaryItem'
 
 export default {
   name: 'ProjectsSection',
   components: {
     SectionItem,
+    SecondaryItem,
   },
   props: {
     data: {

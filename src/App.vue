@@ -38,25 +38,6 @@ export default {
         })
     },
   },
-  /*  parseYaml(data) {*/
-  /*    const requiredFields = ['name', 'title', 'contacts'];*/
-  /*    const fieldMissing = [];*/
-
-  /*    requiredFields.forEach((field) => {*/
-  /*      if (!(field in doc)) {*/
-  /*        fieldMissing.push(field)*/
-  /*      }*/
-  /*    });*/
-
-  /*    if (fieldMissing.length) {*/
-  /*      this.isLoading = false*/
-  /*      this.error = `Following fields are required: ${fieldMissing.join(', ')}`*/
-  /*    } else {*/
-  /*      this.isLoading = false*/
-  /*      this.data = doc*/
-  /*    }*/
-  /*  }*/
-  /*},*/
   mounted() {
     this.fetchResume()
   }
@@ -64,12 +45,15 @@ export default {
 </script>
 
 <style>
-#app {
+body {
+  margin: 0;
+  background-color: #f5f5f5;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
 }
+ul {
+  list-style: none;
+}
+--primary-color: #009688;
 </style>

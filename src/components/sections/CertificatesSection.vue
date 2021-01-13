@@ -1,19 +1,23 @@
 <template>
   <section-item title="certificates">
-    <div v-for="(item, index) in data" v-bind:key="index">
-      <div>{{ item.name }}</div>
-      <div>{{ item.date }}</div>
-      <div v-if="item.description">{{ item.description }}</div>
-    </div>
+    <secondary-item
+      v-for="(item, index) in data"
+      v-bind:key="index"
+      v-bind:title="item.name"
+      v-bind:dates="item.date"
+      v-bind:description="item.description"
+    />
   </section-item>
 </template>
 <script>
 import SectionItem from '../SectionItem'
+import SecondaryItem from '../SecondaryItem'
 
 export default {
   name: 'CertificatesSection',
   components: {
     SectionItem,
+    SecondaryItem,
   },
   props: {
     data: {

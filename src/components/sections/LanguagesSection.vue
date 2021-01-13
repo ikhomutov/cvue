@@ -1,11 +1,14 @@
 <template>
   <section-item title="languages">
-    <div v-for="(item, index) in data" v-bind:key="index">
-      <div>{{ item.language }}</div>
-      <div>{{ item.fluency }}</div>
+    <div class="languages">
+      <div class="language" v-for="(item, index) in data" v-bind:key="index">
+        <div class="language-name">{{ item.language }}</div>
+        <div class="language-fluency">{{ item.fluency }}</div>
+      </div>
     </div>
   </section-item>
 </template>
+
 <script>
 import SectionItem from '../SectionItem'
 
@@ -22,3 +25,22 @@ export default {
   }
 }
 </script>
+
+<style>
+.languages {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.language {
+  flex-grow: 0;
+  flex-basis: 25%;
+  max-width: 25%;
+  padding: 8px;
+}
+
+.language-fluency {
+  color: var(--primary-color);
+  font-style: italic;
+}
+</style>

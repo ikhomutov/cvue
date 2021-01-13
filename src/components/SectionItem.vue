@@ -18,21 +18,26 @@ export default {
 </script>
 <style>
 .section {
-  padding-bottom: 10px;
+  padding-bottom: 16px;
 }
-  
 .section-title {
+  color: var(--primary-color);
   text-align: center;
   font-size: 24px;
   padding: 6px 37px;
-  margin-bottom: 10px;
+  margin-top: 0px;
+  margin-bottom: 16px;
   text-transform: uppercase;
   border-bottom: 2px solid black;
   border-top: 2px solid black;
 }
-
-.section-content: {
-  padding-left: 24px;
-  padding-right: 24px;
+.section-content {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+@media print {
+  .section-title {
+    page-break-after: avoid;
+  }
 }
 </style>
