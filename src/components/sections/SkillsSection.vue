@@ -1,11 +1,16 @@
 <template>
-  <div class="skills">
+  <section-item title="skills">
     <div v-for="(value, key) in data" v-bind:key="key">{{ key }}: {{ value }}</div>
-  </div>
+  </section-item>
 </template>
 <script>
+import SectionItem from '../SectionItem'
+
 export default {
   name: 'SkillsSection',
+  components: {
+    SectionItem,
+  },
   props: {
     data: {
       type: Object,

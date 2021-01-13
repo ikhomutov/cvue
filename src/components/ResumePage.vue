@@ -1,6 +1,5 @@
 <template>
   <basic-section v-bind:data="basic" />
-  <contacts-section v-if="contacts" v-bind:data="contacts" />
   <skills-section v-if="skills" v-bind:data="skills" />
   <experience-section v-if="experience" v-bind:data="experience" />
   <education-section v-if="education" v-bind:data="education" />
@@ -12,7 +11,6 @@
 </template>
 <script>
 import BasicSection from './sections/BasicSection'
-import ContactsSection from './sections/ContactsSection'
 import SkillsSection from './sections/SkillsSection'
 import ExperienceSection from './sections/ExperienceSection'
 import EducationSection from './sections/EducationSection'
@@ -26,7 +24,6 @@ export default {
   name: 'ResumePage',
   components: {
     BasicSection,
-    ContactsSection,
     SkillsSection,
     ExperienceSection,
     EducationSection,

@@ -1,5 +1,5 @@
 <template>
-  <div class="projects">
+  <section-item title="projects">
     <div v-for="(item, index) in data" v-bind:key="index">
       <a v-if="item.link" v-bind:href="item.link">{{ item.name }}</a>
       <div v-else>{{ item.name }}</div>
@@ -11,11 +11,16 @@
         </li>
       </ul>
     </div>
-  </div>
+  </section-item>
 </template>
 <script>
+import SectionItem from '../SectionItem'
+
 export default {
   name: 'ProjectsSection',
+  components: {
+    SectionItem,
+  },
   props: {
     data: {
       type: Array,
