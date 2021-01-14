@@ -97,8 +97,8 @@ export default {
   justify-content: flex-start;
   align-items: center;
   text-decoration: none;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   color: inherit;
   gap: 4px;
   font-size: 1rem;

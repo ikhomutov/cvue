@@ -7,7 +7,7 @@
         <p class="summary" v-if="data.summary">{{ data.summary }}</p>
       </div>
       <div class="basic-photo" v-if="data.photo">
-        <img v-bind:src="data.photo"/>
+        <img width="168" height="168" alt="profile photo" v-bind:src="data.photo"/>
       </div>
       <div class="basic-contacts" v-if="data.contacts">
         <contact-item
@@ -76,8 +76,6 @@ export default {
   overflow: hidden;
 }
 .basic-photo > img {
-  width: 100%;
-  height: 100%;
   text-align: center;
 }
 .basic-contacts {
