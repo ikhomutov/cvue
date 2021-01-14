@@ -1,24 +1,4 @@
-# cvue
+# CVue
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1cf905e0-b81c-4876-a4d8-194184a84f7a/deploy-status)](https://app.netlify.com/sites/cvue-demo/deploys)
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+[Demo](https://cvue-demo.netlify.app/)
