@@ -1,6 +1,8 @@
 <template>
   <section class="section">
-    <h3 v-if="title" class="section-title">{{ title }}</h3>
+    <h3 v-if="title" class="section-title">
+      {{ title }}
+    </h3>
     <div class="section-content">
       <slot></slot>
     </div>
@@ -20,7 +22,7 @@ export default {
 .section {
   padding-bottom: 16px;
 }
-.section-title {
+.section .section-title {
   color: var(--primary-color);
   text-align: center;
   font-size: 24px;
@@ -31,13 +33,8 @@ export default {
   border-bottom: 2px solid black;
   border-top: 2px solid black;
 }
-.section-content {
+.section .section-content {
   padding-left: 32px;
   padding-right: 32px;
-}
-@media print {
-  .section-title {
-    page-break-after: avoid;
-  }
 }
 </style>

@@ -92,7 +92,7 @@ export default {
 
 @media print {
   .secondary-item {
-    break-inside: avoid;
+    page-break-inside: avoid;
   }
   .secondary-item .link {
     display: none;

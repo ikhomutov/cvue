@@ -114,7 +114,7 @@ export default {
 
 @media print {
   .primary-item {
-    break-inside: avoid;
+    page-break-inside: avoid;
   }
 }
 </style>

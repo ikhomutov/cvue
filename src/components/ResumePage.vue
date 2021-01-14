@@ -38,7 +38,7 @@ export default {
   computed: {
     themeStyle() {
       return {
-        '--primary-color': '#009688',
+        '--primary-color': this.color,
         '--secondary-color': '#616161',
       }
     }
@@ -84,6 +84,10 @@ export default {
       type: Array,
       required: false
     },
+    color: {
+      type: String,
+      default: 'teal',
+    }
   }
 }
 </script>

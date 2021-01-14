@@ -1,11 +1,11 @@
 <template>
   <div v-if="isLoading">Loading...</div>
-  <resume-page v-bind="data" v-else />
+  <resume-page v-bind="data" v-bind:color="color" v-else />
 </template>
 
 <script>
 import ResumePage from '@/components/ResumePage'
-import { resumeUrl } from '@/config'
+import { resumeUrl, color } from '@/config'
 import yaml from 'js-yaml';
 
 export default {
@@ -17,7 +17,8 @@ export default {
     return {
       isLoading: true,
       data: null,
-      error: null
+      error: null,
+      color: color,
     }
   },
   methods: {
@@ -55,5 +56,4 @@ body {
 ul {
   list-style: none;
 }
---primary-color: #009688;
 </style>
