@@ -4,9 +4,9 @@
 </template>
 
 <script>
-import ResumePage from '@/components/ResumePage'
-import { resumeUrl, color } from '@/config'
 import yaml from 'js-yaml';
+import ResumePage from '@/components/ResumePage';
+import { resumeUrl, color } from '@/config';
 
 export default {
   name: 'App',
