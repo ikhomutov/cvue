@@ -4,6 +4,7 @@
     <span class="contact-text">{{ value }}</span>
   </a>
 </template>
+
 <script>
 import SvgIcon from './ui/SvgIcon.vue'
 import { mdiWeb, mdiTelegram, mdiGithub, mdiEmail, mdiPhone, mdiLinkedin, mdiTwitter, mdiSkype, mdiMapMarker } from '@mdi/js'

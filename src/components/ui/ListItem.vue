@@ -30,6 +30,7 @@ export default {
   height: 1px;
   border: 1px solid;
   border-color: var(--primary-color);
+  background-color: var(--primary-color);
   margin-right: 8px;
 }
 </style>

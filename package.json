@@ -11,6 +11,7 @@
     "@mdi/js": "^5.8.55",
     "core-js": "^3.6.5",
     "js-yaml": "^4.0.0",
+    "marked": "^4.2.4",
     "vue": "^3.0.0"
   },
   "devDependencies": {

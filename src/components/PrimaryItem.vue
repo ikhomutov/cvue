@@ -9,9 +9,7 @@
     <div class="company-info">
       {{ company }}<span v-if="place">, {{ place }}</span>
     </div>
-    <div class="description" v-if="description">
-      {{ description }}
-    </div>
+    <div class="description" v-if="description" v-html="descriptionHTML"></div>
     <div class="list" v-if="listItems">
       <div class="list-title">
         {{ listTitle }}
@@ -35,6 +33,7 @@
 </template>
 
 <script>
+import { marked } from 'marked'
 import ListItem from './ui/ListItem'
 
 export default {
@@ -68,6 +67,11 @@ export default {
       type: Array,
     },
   },
+  computed: {
+    descriptionHTML() {
+      return marked.parse(this.description)
+    }
+  }
 }
 </script>
 <style>
@@ -89,6 +93,18 @@ export default {
 .primary-item .description {
   color: var(--secondary-color);
   margin-bottom: 8px;
+}
+.primary-item .description > * {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+.primary-item .description h5 {
+  font-size: 16px;
+  margin-top: 6px;
+}
+.primary-item .description ul {
+  list-style: circle;
+  padding-left: 25px;
 }
 .primary-item .list-title {
   font-style: italic;

@@ -4,7 +4,7 @@
 </template>
 
 <script>
-import yaml from 'js-yaml';
+import yaml from "js-yaml";
 import ResumePage from '@/components/ResumePage';
 import { resumeUrl, color } from '@/config';
 

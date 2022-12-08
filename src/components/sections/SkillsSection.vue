@@ -40,6 +40,7 @@ export default {
   min-width: 120px;
 }
 .skills-group .list {
+  margin-left: 8px;
   display: flex;
   gap: 16px;
 }
