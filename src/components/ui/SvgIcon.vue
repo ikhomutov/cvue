@@ -4,9 +4,8 @@
     height="24"
     viewBox="0 0 24 24"
     focusable="false"
-  >
-    <path :d="path" />
-  </svg>
+    v-html="path"
+  />
 </template>
 
 <script>
@@ -24,7 +23,6 @@ export default {
 <style scoped>
 svg {
   color: var(--primary-color);
-  fill: currentColor;
   width: 1rem;
   height: 1rem;
   font-size: inherit;

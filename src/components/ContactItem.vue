@@ -7,7 +7,7 @@
 
 <script>
 import SvgIcon from './ui/SvgIcon.vue'
-import { mdiWeb, mdiGithub, mdiEmail, mdiPhone, mdiLinkedin, mdiTwitter, mdiSkype, mdiMapMarker } from '@mdi/js'
+import { iconWeb, iconGithub, iconEmail, iconPhone, iconLinkedin, iconTwitter, iconSkype, iconTelegram, iconMapMarker } from '@/icons'
 
 export default {
   name: 'ContactItem',
@@ -31,49 +31,55 @@ export default {
         case 'website':
           item = {
             link: `https://${this.value}`,
-            icon: mdiWeb,
+            icon: iconWeb,
           }
           break
         case 'email':
           item = {
             link: `mailto:${this.value}`,
-            icon: mdiEmail,
+            icon: iconEmail,
           }
           break
         case 'github':
           item = {
             link: `https://github.com/${this.value}`,
-            icon: mdiGithub,
+            icon: iconGithub,
           }
           break
         case 'phone':
           item = {
             link: `tel:${this.value}`,
-            icon: mdiPhone,
+            icon: iconPhone,
           }
           break
         case 'linkedin':
           item = {
             link: `https://linkedin.com/in/${this.value}`,
-            icon: mdiLinkedin,
+            icon: iconLinkedin,
           }
           break
         case 'twitter':
           item = {
             link: `https://twitter.com/${this.value}`,
-            icon: mdiTwitter,
+            icon: iconTwitter,
           }
           break
         case 'skype':
           item = {
             link: `skype:${this.value}?chat`,
-            icon: mdiSkype,
+            icon: iconSkype,
+          }
+          break
+        case 'telegram':
+          item = {
+            link: `https://t.me/${this.value}`,
+            icon: iconTelegram,
           }
           break
         case 'address':
           item = {
             link: `https://maps.google.com/?q=${this.value}`,
-            icon: mdiMapMarker,
+            icon: iconMapMarker,
           }
           break
         default: 

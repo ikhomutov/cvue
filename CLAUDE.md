@@ -32,7 +32,9 @@ Set in `.env` files (Vite convention, prefixed with `VITE_`):
 **Component hierarchy:**
 - `App.vue` → `ResumePage.vue` → 9 section components (`BasicSection`, `SkillsSection`, `ExperienceSection`, etc.)
 - Sections use reusable item components: `PrimaryItem` (with markdown via `marked`), `SecondaryItem`, `ContactItem`
-- UI primitives: `SvgIcon` (renders `@mdi/js` icon paths), `ListItem`, `SectionItem` (section wrapper with title)
+- UI primitives: `SvgIcon` (renders inline SVG body via `v-html`), `ListItem`, `SectionItem` (section wrapper with title)
+
+**Icons:** Inline SVG bodies from Tabler Icons (sourced via Iconify API), stored in `src/icons.js`. No icon library dependency — just raw SVG strings. `SvgIcon.vue` renders them with `v-html` inside an `<svg>` tag. To add a new icon: fetch SVG body from https://icon-sets.iconify.design/tabler/, add export to `src/icons.js`.
 
 **No router or state management** — the app is a single view with no navigation.
 

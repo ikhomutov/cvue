@@ -28,7 +28,7 @@
 <script>
 import ListItem from './ui/ListItem.vue'
 import SvgIcon from './ui/SvgIcon.vue'
-import { mdiOpenInNew } from '@mdi/js'
+import { iconExternalLink } from '@/icons'
 
 export default {
   name: 'SecondaryItem',
@@ -38,7 +38,7 @@ export default {
   },
   data() {
     return {
-      linkPath: mdiOpenInNew
+      linkPath: iconExternalLink
     }
   },
   props: {
