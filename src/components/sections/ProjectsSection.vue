@@ -12,8 +12,8 @@
   </section-item>
 </template>
 <script>
-import SectionItem from '../SectionItem'
-import SecondaryItem from '../SecondaryItem'
+import SectionItem from '../SectionItem.vue'
+import SecondaryItem from '../SecondaryItem.vue'
 
 export default {
   name: 'ProjectsSection',

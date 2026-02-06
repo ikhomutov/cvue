@@ -5,8 +5,8 @@
 
 <script>
 import yaml from "js-yaml";
-import ResumePage from '@/components/ResumePage';
-import { resumeUrl, color } from '@/config';
+import ResumePage from '@/components/ResumePage.vue';
+import { resumeUrl, color } from '@/config.js';
 
 export default {
   name: 'App',

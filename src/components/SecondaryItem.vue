@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import ListItem from './ui/ListItem'
+import ListItem from './ui/ListItem.vue'
 import SvgIcon from './ui/SvgIcon.vue'
 import { mdiOpenInNew } from '@mdi/js'
 

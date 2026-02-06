@@ -12,15 +12,15 @@
   </div>
 </template>
 <script>
-import BasicSection from './sections/BasicSection'
-import SkillsSection from './sections/SkillsSection'
-import ExperienceSection from './sections/ExperienceSection'
-import EducationSection from './sections/EducationSection'
-import CertificatesSection from './sections/CertificatesSection'
-import CoursesSection from './sections/CoursesSection'
-import ProjectsSection from './sections/ProjectsSection'
-import LanguagesSection from './sections/LanguagesSection'
-import InterestsSection from './sections/InterestsSection'
+import BasicSection from './sections/BasicSection.vue'
+import SkillsSection from './sections/SkillsSection.vue'
+import ExperienceSection from './sections/ExperienceSection.vue'
+import EducationSection from './sections/EducationSection.vue'
+import CertificatesSection from './sections/CertificatesSection.vue'
+import CoursesSection from './sections/CoursesSection.vue'
+import ProjectsSection from './sections/ProjectsSection.vue'
+import LanguagesSection from './sections/LanguagesSection.vue'
+import InterestsSection from './sections/InterestsSection.vue'
 
 export default {
   name: 'ResumePage',

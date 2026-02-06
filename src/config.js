@@ -1,2 +1,2 @@
-export const resumeUrl = process.env.VUE_APP_RESUME_URL
-export const color = process.env.VUE_APP_COLOR
+export const resumeUrl = import.meta.env.VITE_RESUME_URL
+export const color = import.meta.env.VITE_COLOR

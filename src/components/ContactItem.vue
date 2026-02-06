@@ -7,7 +7,7 @@
 
 <script>
 import SvgIcon from './ui/SvgIcon.vue'
-import { mdiWeb, mdiTelegram, mdiGithub, mdiEmail, mdiPhone, mdiLinkedin, mdiTwitter, mdiSkype, mdiMapMarker } from '@mdi/js'
+import { mdiWeb, mdiGithub, mdiEmail, mdiPhone, mdiLinkedin, mdiTwitter, mdiSkype, mdiMapMarker } from '@mdi/js'
 
 export default {
   name: 'ContactItem',
@@ -32,12 +32,6 @@ export default {
           item = {
             link: `https://${this.value}`,
             icon: mdiWeb,
-          }
-          break
-        case 'telegram':
-          item = {
-            link: `https://t.me/${this.value}`,
-            icon: mdiTelegram,
           }
           break
         case 'email':

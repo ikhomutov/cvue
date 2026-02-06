@@ -34,7 +34,7 @@
 
 <script>
 import { marked } from 'marked'
-import ListItem from './ui/ListItem'
+import ListItem from './ui/ListItem.vue'
 
 export default {
   name: 'PrimaryItem',

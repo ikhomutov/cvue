@@ -14,8 +14,8 @@
   </section-item>
 </template>
 <script>
-import SectionItem from '../SectionItem'
-import PrimaryItem from '../PrimaryItem'
+import SectionItem from '../SectionItem.vue'
+import PrimaryItem from '../PrimaryItem.vue'
 
 export default {
   name: 'EducationSection',

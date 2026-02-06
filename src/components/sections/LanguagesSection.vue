@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import SectionItem from '../SectionItem'
+import SectionItem from '../SectionItem.vue'
 
 export default {
   name: 'LanguagesSection',

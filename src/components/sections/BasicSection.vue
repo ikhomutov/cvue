@@ -22,8 +22,8 @@
 </template>
 
 <script>
-import SectionItem from '../SectionItem'
-import ContactItem from '../ContactItem'
+import SectionItem from '../SectionItem.vue'
+import ContactItem from '../ContactItem.vue'
 
 export default {
   name: 'BasicSection',
