@@ -23,3 +23,4 @@ pnpm-debug.log*
 *.sw?
 
 .playwright-mcp
+cv.local.yaml
