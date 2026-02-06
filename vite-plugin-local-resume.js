@@ -27,8 +27,8 @@ export default function localResume() {
       }
 
       const servedPath = command === 'serve'
-        ? '/__local-resume.yaml'
-        : '/resume-data.yaml'
+        ? '/__local-resume.json'
+        : '/resume-data.json'
 
       return {
         define: {
@@ -41,9 +41,9 @@ export default function localResume() {
       if (!localFilePath) return
 
       server.middlewares.use((req, res, next) => {
-        if (req.url !== '/__local-resume.yaml') return next()
+        if (req.url !== '/__local-resume.json') return next()
         const content = readFileSync(localFilePath, 'utf-8')
-        res.setHeader('Content-Type', 'text/yaml')
+        res.setHeader('Content-Type', 'application/json')
         res.end(content)
       })
     },
@@ -53,7 +53,7 @@ export default function localResume() {
 
       this.emitFile({
         type: 'asset',
-        fileName: 'resume-data.yaml',
+        fileName: 'resume-data.json',
         source: readFileSync(localFilePath, 'utf-8')
       })
     }

@@ -4,7 +4,6 @@
 </template>
 
 <script>
-import yaml from "js-yaml";
 import ResumePage from '@/components/ResumePage.vue';
 import { resumeUrl, color } from '@/config.js';
 
@@ -25,16 +24,16 @@ export default {
     fetchResume() {
       fetch(resumeUrl)
         .then(response => {
-          return response.text()
+          return response.json()
         })
         .then(data => {
-          const doc = yaml.load(data)
-          this.data = doc
+          const { $schema, meta, ...resume } = data
+          this.data = resume
           this.isLoading = false
         })
         .catch(error => {
-          console.log('failed to load yaml', error.stack)
-          this.error = 'Unable to load yaml'
+          console.log('failed to load resume', error.stack)
+          this.error = 'Unable to load resume'
           this.isLoading = false
         })
     },

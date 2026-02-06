@@ -1,11 +1,12 @@
 <template>
   <div :style="themeStyle" class="page">
-    <basic-section v-bind:data="basic" />
+    <basic-section v-bind:data="basics" />
     <skills-section v-if="skills" v-bind:data="skills" />
-    <experience-section v-if="experience" v-bind:data="experience" />
+    <experience-section v-if="work" v-bind:data="work" />
+    <volunteer-section v-if="volunteer" v-bind:data="volunteer" />
     <education-section v-if="education" v-bind:data="education" />
+    <awards-section v-if="awards" v-bind:data="awards" />
     <certificates-section v-if="certificates" v-bind:data="certificates" />
-    <courses-section v-if="courses" v-bind:data="courses" />
     <projects-section v-if="projects" v-bind:data="projects" />
     <languages-section v-if="languages" v-bind:data="languages" />
     <interests-section v-if="interests" v-bind:data="interests" />
@@ -15,9 +16,10 @@
 import BasicSection from './sections/BasicSection.vue'
 import SkillsSection from './sections/SkillsSection.vue'
 import ExperienceSection from './sections/ExperienceSection.vue'
+import VolunteerSection from './sections/VolunteerSection.vue'
 import EducationSection from './sections/EducationSection.vue'
+import AwardsSection from './sections/AwardsSection.vue'
 import CertificatesSection from './sections/CertificatesSection.vue'
-import CoursesSection from './sections/CoursesSection.vue'
 import ProjectsSection from './sections/ProjectsSection.vue'
 import LanguagesSection from './sections/LanguagesSection.vue'
 import InterestsSection from './sections/InterestsSection.vue'
@@ -28,9 +30,10 @@ export default {
     BasicSection,
     SkillsSection,
     ExperienceSection,
+    VolunteerSection,
     EducationSection,
+    AwardsSection,
     CertificatesSection,
-    CoursesSection,
     ProjectsSection,
     LanguagesSection,
     InterestsSection,
@@ -44,19 +47,19 @@ export default {
     }
   },
   props: {
-    basic: {
+    basics: {
       type: Object,
       required: true
     },
-    contacts: {
-      type: Object,
-      required: false
-    },
     skills: {
-      type: Object,
+      type: Array,
       required: false
     },
-    experience: {
+    work: {
+      type: Array,
+      required: false
+    },
+    volunteer: {
       type: Array,
       required: false
     },
@@ -64,11 +67,11 @@ export default {
       type: Array,
       required: false
     },
-    certificates: {
+    awards: {
       type: Array,
       required: false
     },
-    courses: {
+    certificates: {
       type: Array,
       required: false
     },

@@ -1,7 +1,7 @@
 <template>
   <section-item title="interests">
     <div class="interests">
-      <div class="interest" v-for="(item, index) in data" v-bind:key="index">{{ item }}</div>
+      <div class="interest" v-for="(item, index) in data" v-bind:key="index">{{ item.name }}</div>
     </div>
   </section-item>
 </template>

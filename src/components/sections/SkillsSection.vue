@@ -1,12 +1,12 @@
 <template>
   <section-item title="skills">
-    <div v-for="(skillsList, skillsGroup) in data" v-bind:key="skillsGroup" class="skills-group">
+    <div v-for="skill in data" :key="skill.name" class="skills-group">
       <div class="title">
-        {{ skillsGroup }}
+        {{ skill.name }}
       </div>
       <div class="list">
-        <div class="skill" v-for="(skill, index) in skillsList" v-bind:key="index">
-          {{ skill }}
+        <div class="skill" v-for="kw in skill.keywords" :key="kw">
+          {{ kw }}
         </div>
       </div>
     </div>
@@ -22,7 +22,7 @@ export default {
   },
   props: {
     data: {
-      type: Object,
+      type: Array,
       required: true,
     }
   }

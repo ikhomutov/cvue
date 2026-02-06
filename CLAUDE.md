@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-CVue is a Vue 3 single-page resume/CV generator that renders a professional resume from YAML data fetched at runtime. Deployed on Netlify at https://cvue-demo.netlify.app/.
+CVue is a Vue 3 single-page resume/CV generator that renders a professional resume from [JSON Resume](https://jsonresume.org/) data fetched at runtime. Deployed on Netlify at https://cvue-demo.netlify.app/.
 
 ## Commands
 
@@ -18,7 +18,7 @@ No test framework is configured.
 ## Environment Variables
 
 Set in `.env` files (Vite convention, prefixed with `VITE_`):
-- `VITE_RESUME_URL` — URL to a YAML file containing resume data
+- `VITE_RESUME_URL` — URL to a JSON file in JSON Resume format (or local path for dev via vite-plugin-local-resume)
 - `VITE_COLOR` — Primary theme color
 - `VITE_TITLE` — Page title
 - `VITE_GOOGLE_ANALYTICS` — GA tracking ID
@@ -27,10 +27,12 @@ Set in `.env` files (Vite convention, prefixed with `VITE_`):
 
 **Build:** Vite 6 with `@vitejs/plugin-vue`. `@` alias configured in `vite.config.js`.
 
-**Data flow:** `App.vue` fetches YAML from `VITE_RESUME_URL`, parses it with `js-yaml`, and passes sections as props down to `ResumePage.vue`, which conditionally renders section components.
+**Data flow:** `App.vue` fetches JSON from `VITE_RESUME_URL`, parses it with `response.json()`, and passes sections as props down to `ResumePage.vue`, which conditionally renders section components.
+
+**Data format:** [JSON Resume](https://jsonresume.org/) standard. Key sections: `basics`, `work`, `volunteer`, `education`, `awards`, `certificates`, `skills`, `projects`, `languages`, `interests`. Date fields use ISO 8601 format (`2024-11-01`) and are formatted for display via `src/utils.js` (`formatDate`, `formatDateRange`).
 
 **Component hierarchy:**
-- `App.vue` → `ResumePage.vue` → 9 section components (`BasicSection`, `SkillsSection`, `ExperienceSection`, etc.)
+- `App.vue` → `ResumePage.vue` → 10 section components (`BasicSection`, `SkillsSection`, `ExperienceSection`, `VolunteerSection`, `EducationSection`, `AwardsSection`, `CertificatesSection`, `ProjectsSection`, `LanguagesSection`, `InterestsSection`)
 - Sections use reusable item components: `PrimaryItem` (with markdown via `marked`), `SecondaryItem`, `ContactItem`
 - UI primitives: `SvgIcon` (renders inline SVG body via `v-html`), `ListItem`, `SectionItem` (section wrapper with title)
 

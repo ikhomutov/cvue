@@ -3,15 +3,15 @@
     <div class="basic">
       <div class="basic-info">
         <h1 class="name">{{ data.name }}</h1>
-        <h2 class="title">{{ data.title }}</h2>
+        <h2 class="title">{{ data.label }}</h2>
         <p class="summary" v-if="data.summary">{{ data.summary }}</p>
       </div>
-      <div class="basic-photo" v-if="data.photo">
-        <img width="168" height="168" alt="profile photo" v-bind:src="data.photo"/>
+      <div class="basic-photo" v-if="data.image">
+        <img width="168" height="168" alt="profile photo" v-bind:src="data.image"/>
       </div>
-      <div class="basic-contacts" v-if="data.contacts">
+      <div class="basic-contacts" v-if="contacts">
         <contact-item
-          v-for="(value, key) in data.contacts"
+          v-for="(value, key) in contacts"
           v-bind:key="key"
           v-bind:type="key"
           v-bind:value="value"
@@ -38,11 +38,22 @@ export default {
     }
   },
   computed: {
-    test() {
-      return {
-        one: 'one',
-        two: 'two',
+    contacts() {
+      const c = {}
+      if (this.data.email) c.email = this.data.email
+      if (this.data.phone) c.phone = this.data.phone
+      if (this.data.url) c.website = this.data.url.replace(/^https?:\/\//, '')
+      if (this.data.location) {
+        const loc = this.data.location
+        const parts = [loc.city, loc.region, loc.countryCode].filter(Boolean)
+        if (parts.length) c.address = parts.join(', ')
       }
+      if (this.data.profiles) {
+        for (const p of this.data.profiles) {
+          c[p.network.toLowerCase()] = p.username || p.url
+        }
+      }
+      return Object.keys(c).length ? c : null
     }
   }
 }

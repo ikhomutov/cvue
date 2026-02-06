@@ -10,7 +10,6 @@
     "lint": "eslint src"
   },
   "dependencies": {
-    "js-yaml": "^4.1.0",
     "marked": "^15.0.0",
     "vue": "^3.5.13"
   },
